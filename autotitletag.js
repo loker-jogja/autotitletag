@@ -1,9 +1,11 @@
-// Ambil semua anchor link pada halaman
-const links = document.querySelectorAll('a');
+// Cari semua tag <a> di dalam dokumen
+const links = document.querySelectorAll("a");
 
-// Loop melalui setiap anchor link dan tambahkan atribut title jika belum ada
-links.forEach((link) => {
-  if (!link.hasAttribute('title')) {
-    link.setAttribute('title', link.textContent);
+// Iterasi setiap tag <a>
+for (let i = 0; i < links.length; i++) {
+  // Periksa apakah tag <a> memiliki atribut title
+  if (!links[i].hasAttribute("title")) {
+    // Jika tidak ada, tambahkan atribut title dengan nilai isi dari tag <a>
+    links[i].setAttribute("title", links[i].innerHTML);
   }
-});
+}
